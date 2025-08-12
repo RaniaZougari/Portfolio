@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
@@ -52,6 +53,12 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
+          <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+            <Linkedin size={20} />
+          </a>
+          <a href="https://github.com/RaniaZougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
+            <Github size={20} />
+          </a>
           <ThemeToggle />
         </div>
 
@@ -85,6 +92,14 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            <div className="flex items-center gap-6 mt-2">
+              <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+                <Linkedin size={24} />
+              </a>
+              <a href="https://github.com/RaniaZougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
+                <Github size={24} />
+              </a>
+            </div>
             <ThemeToggle showOnMobile className="mt-8" />
           </div>
         </div>

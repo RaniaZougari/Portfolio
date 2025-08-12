@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github, Cake, Atom, Palette, FunctionSquare, Brain, LineChart } from "lucide-react";
+import { ArrowRight, Cake, Atom, Palette, FunctionSquare, Brain, LineChart } from "lucide-react";
 
 const tagColors = {
   // Core CS
@@ -12,6 +12,10 @@ const tagColors = {
   "Algorithms": "bg-indigo-600 text-white",
   "Numerical Methods": "bg-purple-600 text-white",
   "Euler": "bg-cyan-600 text-white",
+  "Java": "bg-amber-600 text-white",
+  "Compilers": "bg-slate-700 text-white",
+  "Parsing": "bg-teal-700 text-white",
+  "Code Generation": "bg-rose-700 text-white",
   // Web/micro
   "JavaScript": "bg-yellow-500 text-black",
   "HTML": "bg-orange-500 text-white",
@@ -27,43 +31,92 @@ const tagColors = {
   "Scikit-learn": "bg-green-600 text-white",
   "Pandas": "bg-emerald-500 text-white",
   "Logistic Regression": "bg-sky-600 text-white",
+  "AI": "bg-purple-700 text-white",
 };
 
+const iconMap = { Brain, LineChart, Atom, Palette, FunctionSquare, Cake };
+
 const projects = [
-  // EXPERIENCE PROJECTS (Data Science first)
   {
     id: "exp-rag",
     title: "RAG System for Literature Reviews (CNRS)",
-    description:
+    shortDescription:
       "High-precision Retrieval-Augmented Generation pipeline with reranking; containerized for reproducibility.",
+    longDescription:
+      "End-to-end RAG pipeline for literature review assistance: retrieval, reranking and generation. Emphasis on precision and reproducibility using containers.",
     tags: ["Python", "LLMs", "RAG", "Reranking", "Podman"],
-    period: "2025",
-    icon: Brain,
+    period: "Summer 2025",
+    icon: "Brain",
     gradient: "from-indigo-500/20 to-purple-500/20",
-    demoUrl: "/CV_RaniaZ_ENG.pdf", // case study in resume
+    demoUrl: "/CV_RaniaZ_ENG.pdf",
+    githubUrl: null,
+  },
+  {
+    id: "auction-ds",
+    title: "Auction Price Prediction & Bidding Strategy",
+    shortDescription:
+      "Predict closing prices and derive bidding strategies with a robust ML pipeline.",
+    longDescription:
+      "Data preparation, feature engineering and supervised learning to model auction closing prices; simple strategy derivation for competitive bidding.",
+    tags: ["Python", "Scikit-learn", "Pandas", "Logistic Regression"],
+    period: "2025",
+    icon: "LineChart",
+    gradient: "from-emerald-500/20 to-cyan-500/20",
+    demoUrl: "/CV_RaniaZ_ENG.pdf",
     githubUrl: null,
   },
   {
     id: "exp-tennis-ml",
     title: "Roland‑Garros Winner Prediction",
-    description:
+    shortDescription:
       "Supervised learning on historical tournaments; feature engineering and logistic regression baseline.",
+    longDescription:
+      "Exploratory data analysis, feature engineering and baseline logistic regression to estimate win probabilities.",
     tags: ["Python", "Scikit-learn", "Pandas", "Logistic Regression"],
-    period: "2025",
-    icon: LineChart,
+    period: "Summer 2025",
+    icon: "LineChart",
     gradient: "from-blue-500/20 to-emerald-500/20",
     demoUrl: "/CV_RaniaZ_ENG.pdf",
     githubUrl: null,
   },
-  // REPO PROJECTS
+  {
+    id: "blob-war",
+    title: "AI Board Game (Blob War)",
+    shortDescription:
+      "AI board game project in Java with algorithmic decision-making.",
+    longDescription:
+      "Fidèle au CV. Détails complets à insérer (heuristiques/algorithmes exacts, évaluation, règles).",
+    tags: ["Java", "Algorithms", "AI"],
+    period: "April 2025",
+    icon: "Atom",
+    gradient: "from-violet-500/20 to-indigo-500/20",
+    githubUrl: "https://github.com/RaniaZougari",
+    demoUrl: null,
+  },
+  {
+    id: "deca-compiler",
+    title: "DECA Compiler",
+    shortDescription:
+      "Full compiler for the DECA language: lexing, parsing, semantic checks, and code generation.",
+    longDescription:
+      "Fidèle au CV. À compléter: pipeline (lexer, parser, AST), vérifications contextuelles/typage, optimisations, backend (IMA/ARM), suite de tests.",
+    tags: ["Java", "Compilers", "Parsing", "Code Generation"],
+    period: "December 2024",
+    icon: "FunctionSquare",
+    gradient: "from-indigo-500/20 to-cyan-500/20",
+    githubUrl: null,
+    demoUrl: null,
+  },
   {
     id: "sim-particles",
     title: "Particle Collision Simulation (C++)",
-    description:
+    shortDescription:
       "Physics‑based particle system with collision handling and clean architecture; tests and docs.",
+    longDescription:
+      "Particle system, kinematics and collision handling; focus on clarity and testing.",
     tags: ["C++", "Physics", "Simulation"],
     period: "2025",
-    icon: Atom,
+    icon: "Atom",
     gradient: "from-purple-500/20 to-blue-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/projetcxx_zougarir_zimmerh/Simulation_particules",
@@ -72,11 +125,13 @@ const projects = [
   {
     id: "c-gui",
     title: "C GUI Toolkit & Demos",
-    description:
+    shortDescription:
       "Custom GUI in C with geometry, widgets, events, and demos (2048, Minesweeper, Frames, Buttons).",
+    longDescription:
+      "Educational toolkit including geometry primitives, event handling and several demo apps.",
     tags: ["C", "GUI", "Widgets", "Games"],
     period: "2024–2025",
-    icon: Palette,
+    icon: "Palette",
     gradient: "from-pink-500/20 to-rose-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/projet-c-ig",
@@ -85,29 +140,18 @@ const projects = [
   {
     id: "cake",
     title: "Interactive Birthday Cake",
-    description:
+    shortDescription:
       "Fun HTML/CSS/JS micro‑project: interactive cake with animations and responsive design.",
+    longDescription:
+      "Micro‑projet front-end pour explorer les animations et la responsivité.",
     tags: ["HTML", "CSS", "JavaScript"],
     period: "2024",
-    icon: Cake,
+    icon: "Cake",
     gradient: "from-fuchsia-500/20 to-violet-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/BDCake",
     demoUrl: null,
-  },
-  {
-    id: "euler",
-    title: "Numerical Methods (Euler) in C++",
-    description:
-      "Implementation of explicit/implicit Euler integrators with clean structure and traces.",
-    tags: ["C++", "Numerical Methods", "Euler", "Algorithms"],
-    period: "2024",
-    icon: FunctionSquare,
-    gradient: "from-cyan-500/20 to-teal-500/20",
-    githubUrl:
-      "https://github.com/RaniaZougari/myportfolio/tree/main/projetcxx_zougarir_zimmerh/TP1",
-    demoUrl: null,
-  },
+  }
 ];
 
 export const ProjectsSection = () => {
@@ -124,7 +168,7 @@ export const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {projects.map((project) => {
-            const Icon = project.icon;
+            const Icon = iconMap[project.icon] || Atom;
             return (
               <div
                 key={project.id}
@@ -135,9 +179,6 @@ export const ProjectsSection = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="absolute w-40 h-40 rounded-full bg-white/40 dark:bg-white/10 blur-2xl" />
                     <Icon className="relative h-14 w-14 text-primary drop-shadow-sm" />
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 rounded-full p-2 shadow">
-                    <Icon className="h-6 w-6 text-primary" />
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex flex-wrap gap-1">
@@ -152,43 +193,17 @@ export const ProjectsSection = () => {
 
                 <div className="p-6">
                   <h3 className="text-lg font-semibold mb-2 line-clamp-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-3 line-clamp-3">{project.description}</p>
+                  <p className="text-muted-foreground text-sm mb-3 line-clamp-3">{project.shortDescription}</p>
                   <p className="text-primary text-xs font-medium mb-4">{project.period}</p>
-
-                  <div className="flex justify-between items-center">
-                    <div className="flex space-x-2">
-                      {project.demoUrl && (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          className="text-foreground/80 hover:text-primary transition-colors duration-300 p-1 rounded hover:bg-primary/10"
-                          title="Open case study"
-                        >
-                          <ExternalLink size={18} />
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          className="text-foreground/80 hover:text-primary transition-colors duration-300 p-1 rounded hover:bg-primary/10"
-                          title="View Code"
-                        >
-                          <Github size={18} />
-                        </a>
-                      )}
+                  {project.tags.length > 2 && (
+                    <div className="flex flex-wrap gap-1">
+                      {project.tags.slice(2).map((tag) => (
+                        <span key={tag} className={`px-2 py-1 text-xs font-medium rounded-full ${tagColors[tag] || 'bg-gray-500 text-white'}`}>
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-
-                    {project.tags.length > 2 && (
-                      <div className="flex flex-wrap gap-1">
-                        {project.tags.slice(2).map((tag) => (
-                          <span key={tag} className={`px-2 py-1 text-xs font-medium rounded-full ${tagColors[tag] || 'bg-gray-500 text-white'}`}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
             );
@@ -205,6 +220,8 @@ export const ProjectsSection = () => {
           </a>
         </div>
       </div>
+
+
     </section>
   );
 };

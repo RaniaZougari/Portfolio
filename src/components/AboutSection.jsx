@@ -1,4 +1,6 @@
 import { Briefcase, Code, User, GraduationCap, Target, Building, Award, Globe, Zap, Rocket } from "lucide-react";
+import EnsimagLogo from "../../images/Ensimag.png";
+import NsigmaLogo from "../../images/Nsigma.png";
 
 export const AboutSection = () => {
   return (
@@ -62,7 +64,7 @@ export const AboutSection = () => {
               <div className="gradient-border p-6 card-hover relative">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
-                    <img src="/Ensimag.png" alt="Ensimag Logo" className="h-6 w-6" />
+                    <img src={EnsimagLogo} alt="Ensimag Logo" className="h-6 w-6" />
                   </div>
                   <div className="text-left flex-1">
                     <h4 className="font-semibold text-lg">Grenoble INP - Ensimag</h4>
@@ -139,7 +141,7 @@ export const AboutSection = () => {
               <div className="gradient-border p-6 card-hover relative">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
-                    <img src="/Nsigma.png" alt="Nsigma Logo" className="h-6 w-6" />
+                    <img src={NsigmaLogo} alt="Nsigma Logo" className="h-6 w-6" />
                   </div>
                   <div className="text-left flex-1">
                     <h4 className="font-semibold text-lg">Quality Manager</h4>

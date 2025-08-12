@@ -32,10 +32,10 @@ const technicalSkills = [
 ];
 
 const languages = [
-  { name: "French", level: "Native", flag: "🇫🇷" },
-  { name: "Arabic", level: "Native", flag: "🇲🇦" },
-  { name: "English", level: "Fluent (C1)", flag: "🇺🇸" },
-  { name: "Spanish", level: "Intermediate (B2)", flag: "🇪🇸" },
+  { name: "French", level: "Native" },
+  { name: "Arabic", level: "Native"},
+  { name: "English", level: "Fluent (C1)"},
+  { name: "Spanish", level: "Intermediate (B2)" },
 ];
 
 const softSkills = [
@@ -155,41 +155,8 @@ export const SkillsSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Research & Development Focus */}
-        <div className="mt-16">
-          <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 p-8 rounded-lg border">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-primary/10 p-2 rounded-full">
-                <Cpu className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold">
-                Research & Development Competencies
-              </h3>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                "Machine Learning",
-                "Deep Learning",
-                "Natural Language Processing",
-                "Computer Vision",
-                "Statistical Analysis",
-                "Data Science",
-                "RAG Systems",
-                "LLMs",
-                "Containerization",
-                "Research Methodology",
-                "Literature Reviews",
-                "Academic Writing"
-              ].map((skill, index) => (
-                <div key={index} className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg text-center">
-                  <span className="font-medium text-sm">{skill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
+
     </section>
   );
 };
