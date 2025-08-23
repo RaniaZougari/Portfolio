@@ -38,11 +38,6 @@ const languages = [
   { name: "Spanish", level: "Intermediate (B2)" },
 ];
 
-const softSkills = [
-  "Research & Development", "Problem Solving", "Analytical Thinking", 
-  "Team Collaboration", "Project Management", "Quality Assurance",
-  "Leadership", "Communication", "Event Management", "Adaptability"
-];
 
 const categories = ["all", "programming", "ai", "tools"];
 
@@ -118,41 +113,21 @@ export const SkillsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Languages */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
-              <Globe className="h-6 w-6 text-primary" />
-              Languages
-            </h3>
-            <div className="space-y-4">
-              {languages.map((lang, index) => (
-                <div key={index} className="bg-card p-4 rounded-lg shadow-sm border">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{lang.flag}</span>
-                      <h4 className="font-semibold">{lang.name}</h4>
-                    </div>
-                    <span className="text-primary font-medium">{lang.level}</span>
-                  </div>
+        {/* Languages */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
+            <Globe className="h-6 w-6 text-primary" />
+            Languages
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {languages.map((lang, index) => (
+              <div key={index} className="bg-card p-4 rounded-lg shadow-sm border">
+                <div className="flex items-center gap-3">
+                  <h4 className="font-semibold">{lang.name}</h4>
+                  <span className="text-primary font-medium">{lang.level}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Soft Skills */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
-              <Users className="h-6 w-6 text-primary" />
-              Professional Skills
-            </h3>
-            <div className="grid grid-cols-2 gap-3">
-              {softSkills.map((skill, index) => (
-                <div key={index} className="bg-card p-4 rounded-lg shadow-sm border text-center hover:bg-primary/5 transition-colors duration-300">
-                  <span className="font-medium text-sm">{skill}</span>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

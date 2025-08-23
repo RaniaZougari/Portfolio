@@ -31,25 +31,7 @@ export const HeroSection = () => {
             Machine Learning, and Applied Mathematics.
           </p>
 
-          <div className="opacity-0 animate-fade-in-delay-3">
-            <div className="bg-card/50 backdrop-blur-sm p-6 rounded-lg border inline-block relative">
-              <div className="flex items-center justify-center mb-4">
-                <div className="bg-primary/10 p-2 rounded-full mr-3">
-                  <Zap className="h-5 w-5 text-primary" />
-                </div>
-                <span className="text-sm text-muted-foreground">Key Skills</span>
-              </div>
-              <div className="flex flex-wrap justify-center gap-3 mb-4">
-                <span className="px-4 py-2 bg-blue-500/10 text-blue-500 rounded-full text-sm font-medium">Computer Science</span>
-                <span className="px-4 py-2 bg-purple-500/10 text-purple-500 rounded-full text-sm font-medium">AI</span>
-                <span className="px-4 py-2 bg-green-500/10 text-green-500 rounded-full text-sm font-medium">Data Science</span>
-                <span className="px-4 py-2 bg-red-500/10 text-red-500 rounded-full text-sm font-medium">Statistics</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Open to internship opportunities in AI and Data Science
-              </p>
-            </div>
-          </div>
+
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button">
