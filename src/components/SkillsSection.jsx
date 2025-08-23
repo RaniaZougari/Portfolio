@@ -4,30 +4,29 @@ import { Code, Database, Settings, Globe, Users, Target, Brain, Zap, Palette, Cp
 
 const technicalSkills = [
   // Programming Languages
-  { name: "Python", level: 90, category: "programming" },
-  { name: "Java", level: 85, category: "programming" },
-  { name: "C++", level: 80, category: "programming" },
+  { name: "Python", level: 85, category: "programming" },
+  { name: "Java", level: 70, category: "programming" },
+  { name: "C++", level: 75, category: "programming" },
   { name: "C", level: 75, category: "programming" },
   { name: "R", level: 80, category: "programming" },
   { name: "SQL", level: 85, category: "programming" },
   { name: "HTML/CSS/JS", level: 70, category: "programming" },
 
   // AI/ML Technologies
-  { name: "TensorFlow", level: 85, category: "ai" },
-  { name: "PyTorch", level: 80, category: "ai" },
-  { name: "Scikit-learn", level: 90, category: "ai" },
-  { name: "Pandas", level: 90, category: "ai" },
+  { name: "TensorFlow", level: 75, category: "ai" },
+  { name: "PyTorch", level: 70, category: "ai" },
+  { name: "Scikit-learn", level: 80, category: "ai" },
+  { name: "Pandas", level: 70, category: "ai" },
 
   // Engineering & Tools
-  { name: "Docker", level: 85, category: "tools" },
-  { name: "Podman", level: 80, category: "tools" },
-  { name: "Git", level: 90, category: "tools" },
-  { name: "DevOps", level: 75, category: "tools" },
+  { name: "Docker", level: 65, category: "tools" },
+  { name: "Podman", level: 60, category: "tools" },
+  { name: "Git", level: 70, category: "tools" },
+  { name: "DevOps", level: 70, category: "tools" },
   { name: "MySQL", level: 80, category: "tools" },
-  { name: "Oracle", level: 70, category: "tools" },
-  { name: "PostgreSQL", level: 75, category: "tools" },
+  { name: "Oracle", level: 80, category: "tools" },
   { name: "Jupyter Notebook", level: 90, category: "tools" },
-  { name: "RStudio", level: 80, category: "tools" },
+  { name: "RStudio", level: 85, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
 ];
 
