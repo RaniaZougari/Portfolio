@@ -39,7 +39,7 @@ const iconMap = { Brain, LineChart, Atom, Palette, FunctionSquare, Cake };
 const projects = [
   {
     id: "exp-rag",
-    title: "RAG System for Literature Reviews (CNRS)",
+    title: "RAG System for Literature Reviews (CNRS internship)",
     shortDescription:
       "High-precision Retrieval-Augmented Generation pipeline with reranking; containerized for reproducibility.",
     longDescription:
@@ -53,12 +53,12 @@ const projects = [
   },
   {
     id: "auction-ds",
-    title: "Auction Price Prediction & Bidding Strategy",
+    title: "Auction DataBase project",
     shortDescription:
-      "Predict closing prices and derive bidding strategies with a robust ML pipeline.",
+      "Implemented distributed DB architecture with MySQL, ensuring ACID compliance and data consistency.",
     longDescription:
-      "Data preparation, feature engineering and supervised learning to model auction closing prices; simple strategy derivation for competitive bidding.",
-    tags: ["Python", "Scikit-learn", "Pandas", "Logistic Regression"],
+      "Implemented distributed DB architecture with MySQL, ensuring ACID compliance and data consistency.",
+    tags: ["Java", "MySQL", "SQL"],
     period: "2025",
     icon: "LineChart",
     gradient: "from-emerald-500/20 to-cyan-500/20",
@@ -67,7 +67,7 @@ const projects = [
   },
   {
     id: "exp-tennis-ml",
-    title: "Roland‑Garros Winner Prediction",
+    title: "Roland Garros 2025 Winner Prediction",
     shortDescription:
       "Supervised learning on historical tournaments; feature engineering and logistic regression baseline.",
     longDescription:
@@ -83,10 +83,10 @@ const projects = [
     id: "blob-war",
     title: "AI Board Game (Blob War)",
     shortDescription:
-      "AI board game project in Java with algorithmic decision-making.",
+      "Developed an AI-driven board game in C++ using Minimax and Alpha-Beta pruning.",
     longDescription:
-      "Fidèle au CV. Détails complets à insérer (heuristiques/algorithmes exacts, évaluation, règles).",
-    tags: ["Java", "Algorithms", "AI"],
+      "Developed an AI-driven board game in C++ using Minimax and Alpha-Beta pruning.",
+    tags: ["C++", "Algorithms", "AI", "Minimax", "Alpha-Beta"],
     period: "April 2025",
     icon: "Atom",
     gradient: "from-violet-500/20 to-indigo-500/20",
@@ -97,10 +97,10 @@ const projects = [
     id: "deca-compiler",
     title: "DECA Compiler",
     shortDescription:
-      "Full compiler for the DECA language: lexing, parsing, semantic checks, and code generation.",
+      "Designed and implemented complete compiler from scratch in Java with BYTE extension.",
     longDescription:
-      "Fidèle au CV. À compléter: pipeline (lexer, parser, AST), vérifications contextuelles/typage, optimisations, backend (IMA/ARM), suite de tests.",
-    tags: ["Java", "Compilers", "Parsing", "Code Generation"],
+      "Designed and implemented complete compiler from scratch in Java with BYTE extension.",
+    tags: ["Java", "Compilers", "BYTE"],
     period: "December 2024",
     icon: "FunctionSquare",
     gradient: "from-indigo-500/20 to-cyan-500/20",
@@ -111,10 +111,10 @@ const projects = [
     id: "sim-particles",
     title: "Particle Collision Simulation (C++)",
     shortDescription:
-      "Physics‑based particle system with collision handling and clean architecture; tests and docs.",
+      "Physics-based particle system with collision handling and clean architecture",
     longDescription:
-      "Particle system, kinematics and collision handling; focus on clarity and testing.",
-    tags: ["C++", "Physics", "Simulation"],
+      "Physics-based particle system with collision handling and clean architecture",
+    tags: ["C++", "VTK", "Simulation"],
     period: "2025",
     icon: "Atom",
     gradient: "from-purple-500/20 to-blue-500/20",
@@ -124,14 +124,14 @@ const projects = [
   },
   {
     id: "c-gui",
-    title: "C GUI Toolkit & Demos",
+    title: "C project : Graphic interface",
     shortDescription:
-      "Custom GUI in C with geometry, widgets, events, and demos (2048, Minesweeper, Frames, Buttons).",
+      "Custom GUI in C with geometry, widgets and events",
     longDescription:
-      "Educational toolkit including geometry primitives, event handling and several demo apps.",
+      "Custom GUI in C with geometry, widgets and events",
     tags: ["C", "GUI", "Widgets", "Games"],
-    period: "2024–2025",
-    icon: "Palette",
+    period: "May 2024",
+    icon: "C",
     gradient: "from-pink-500/20 to-rose-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/projet-c-ig",
@@ -145,7 +145,7 @@ const projects = [
     longDescription:
       "Micro‑projet front-end pour explorer les animations et la responsivité.",
     tags: ["HTML", "CSS", "JavaScript"],
-    period: "2024",
+    period: "Summer 2025",
     icon: "Cake",
     gradient: "from-fuchsia-500/20 to-violet-500/20",
     githubUrl:

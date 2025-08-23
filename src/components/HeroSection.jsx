@@ -4,16 +4,11 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20"
     >
       <div className="container max-w-5xl mx-auto text-center z-10 relative pb-20 md:pb-24">
         <div className="space-y-8">
           <div className="space-y-4">
-            <div className="flex justify-center mb-6">
-              <div className="bg-primary/10 p-4 rounded-full">
-                <Brain className="h-12 w-12 text-primary" />
-              </div>
-            </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
               <span className="opacity-0 animate-fade-in">Hi, I'm</span>
               <span className="text-primary opacity-0 animate-fade-in-delay-1">
@@ -27,7 +22,7 @@ export const HeroSection = () => {
             </h1>
 
             <h2 className="text-xl md:text-2xl font-semibold text-muted-foreground opacity-0 animate-fade-in-delay-3">
-              AI Research Engineer & Data Scientist
+              AI Engineer & Data Scientist
             </h2>
           </div>
 
@@ -42,16 +37,16 @@ export const HeroSection = () => {
                 <div className="bg-primary/10 p-2 rounded-full mr-3">
                   <Zap className="h-5 w-5 text-primary" />
                 </div>
-                <span className="text-sm text-muted-foreground">Core Competencies</span>
+                <span className="text-sm text-muted-foreground">Key Skills</span>
               </div>
               <div className="flex flex-wrap justify-center gap-3 mb-4">
-                <span className="px-4 py-2 bg-blue-500/10 text-blue-500 rounded-full text-sm font-medium">AI Research</span>
-                <span className="px-4 py-2 bg-purple-500/10 text-purple-500 rounded-full text-sm font-medium">Machine Learning</span>
-                <span className="px-4 py-2 bg-green-500/10 text-green-500 rounded-full text-sm font-medium">Deep Learning</span>
-                <span className="px-4 py-2 bg-red-500/10 text-red-500 rounded-full text-sm font-medium">Research & Development</span>
+                <span className="px-4 py-2 bg-blue-500/10 text-blue-500 rounded-full text-sm font-medium">Computer Science</span>
+                <span className="px-4 py-2 bg-purple-500/10 text-purple-500 rounded-full text-sm font-medium">AI</span>
+                <span className="px-4 py-2 bg-green-500/10 text-green-500 rounded-full text-sm font-medium">Data Science</span>
+                <span className="px-4 py-2 bg-red-500/10 text-red-500 rounded-full text-sm font-medium">Statistics</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Open to internship/full‑time opportunities in AI and Data Science
+                Open to internship opportunities in AI and Data Science
               </p>
             </div>
           </div>
@@ -77,13 +72,9 @@ export const HeroSection = () => {
               <p className="text-sm text-muted-foreground">Currently seeking opportunities at</p>
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold">
-              <span className="text-blue-600">Research Labs</span>
-              <span className="text-gray-600">•</span>
               <span className="text-blue-500">Tech Companies</span>
               <span className="text-gray-600">•</span>
               <span className="text-orange-500">AI Startups</span>
-              <span className="text-gray-600">•</span>
-              <span className="text-red-500">Academic Institutions</span>
               <span className="text-gray-600">•</span>
               <span className="text-blue-700">Innovation Centers</span>
             </div>
