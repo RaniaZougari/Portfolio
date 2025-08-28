@@ -1,4 +1,4 @@
-import { Briefcase, Code, Globe, Zap } from "lucide-react";
+import { Globe, Zap } from "lucide-react";
 import NsigmaLogo from "../../images/Nsigma.png";
 import RingLogo from "../../images/ring_labs_logo.png"; // Ajoutez images/RING.png au repo
 

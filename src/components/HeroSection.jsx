@@ -1,4 +1,4 @@
-import { ArrowDown, Brain, Rocket, Zap } from "lucide-react";
+import { ArrowDown, Rocket } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -10,7 +10,7 @@ export const HeroSection = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              <span className="opacity-0 animate-fade-in">Hi, I'm</span>
+              <span className="opacity-0 animate-fade-in">Hi, I&apos;m</span>
               <span className="text-primary opacity-0 animate-fade-in-delay-1">
                 {" "}
                 Rania
@@ -27,11 +27,9 @@ export const HeroSection = () => {
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto opacity-0 animate-fade-in-delay-3 leading-relaxed">
-            Engineering student at <span className="text-primary font-semibold">Grenoble INP – Ensimag</span>, specializing in Artificial Intelligence, 
+            Engineering student at <span className="text-primary font-semibold">Grenoble INP &ndash; Ensimag</span>, specializing in Artificial Intelligence,
             Machine Learning, and Applied Mathematics.
           </p>
-
-
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button">
@@ -64,9 +62,19 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-20 pointer-events-none">
-        <span className="text-sm text-muted-foreground mb-2">Explore Portfolio</span>
-        <ArrowDown className="h-5 w-5 text-primary" />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-20">
+        <button 
+          onClick={() => {
+            window.scrollBy({
+              top: window.innerHeight * 0.8,
+              behavior: 'smooth'
+            });
+          }}
+          className="flex flex-col items-center hover:scale-110 transition-transform duration-300 cursor-pointer group"
+        >
+          <span className="text-sm text-muted-foreground mb-2 group-hover:text-primary transition-colors duration-300">Explore Portfolio</span>
+          <ArrowDown className="h-5 w-5 text-primary group-hover:animate-bounce transition-all duration-300" />
+        </button>
       </div>
     </section>
   );

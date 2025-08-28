@@ -37,7 +37,7 @@ export const Navbar = () => {
           href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> Rania's </span>{" "}
+            <span className="text-glow text-foreground"> Rania&apos;s </span>{" "}
             Portfolio
           </span>
         </a>
@@ -53,10 +53,10 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
-          <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" rel="noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
             <Linkedin size={20} />
           </a>
-          <a href="https://github.com/RaniaZougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
+          <a href="https://github.com/RaniaZougari" target="_blank" rel="noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
             <Github size={20} />
           </a>
           <ThemeToggle />
@@ -93,10 +93,10 @@ export const Navbar = () => {
               </a>
             ))}
             <div className="flex items-center gap-6 mt-2">
-              <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" rel="noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
                 <Linkedin size={24} />
               </a>
-              <a href="https://github.com/RaniaZougari" target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
+              <a href="https://github.com/RaniaZougari" target="_blank" rel="noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
                 <Github size={24} />
               </a>
             </div>

@@ -1,33 +1,33 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Code, Database, Settings, Globe, Users, Target, Brain, Zap, Palette, Cpu } from "lucide-react";
+import { Code, Globe, Brain } from "lucide-react";
 
 const technicalSkills = [
   // Programming Languages
-  { name: "Python", level: 85, category: "programming" },
-  { name: "Java", level: 70, category: "programming" },
-  { name: "C++", level: 75, category: "programming" },
-  { name: "C", level: 75, category: "programming" },
-  { name: "R", level: 80, category: "programming" },
-  { name: "SQL", level: 85, category: "programming" },
-  { name: "HTML/CSS/JS", level: 70, category: "programming" },
+  { name: "Python", category: "programming" },
+  { name: "Java", category: "programming" },
+  { name: "C++", category: "programming" },
+  { name: "C", category: "programming" },
+  { name: "R", category: "programming" },
+  { name: "SQL", category: "programming" },
+  { name: "HTML/CSS/JS", category: "programming" },
 
   // AI/ML Technologies
-  { name: "TensorFlow", level: 75, category: "ai" },
-  { name: "PyTorch", level: 70, category: "ai" },
-  { name: "Scikit-learn", level: 80, category: "ai" },
-  { name: "Pandas", level: 70, category: "ai" },
+  { name: "TensorFlow", category: "ai" },
+  { name: "PyTorch", category: "ai" },
+  { name: "Scikit-learn", category: "ai" },
+  { name: "Pandas", category: "ai" },
 
   // Engineering & Tools
-  { name: "Docker", level: 65, category: "tools" },
-  { name: "Podman", level: 60, category: "tools" },
-  { name: "Git", level: 70, category: "tools" },
-  { name: "DevOps", level: 70, category: "tools" },
-  { name: "MySQL", level: 80, category: "tools" },
-  { name: "Oracle", level: 80, category: "tools" },
-  { name: "Jupyter Notebook", level: 90, category: "tools" },
-  { name: "RStudio", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Docker", category: "tools" },
+  { name: "Podman", category: "tools" },
+  { name: "Git", category: "tools" },
+  { name: "DevOps", category: "tools" },
+  { name: "MySQL", category: "tools" },
+  { name: "Oracle", category: "tools" },
+  { name: "Jupyter Notebook", category: "tools" },
+  { name: "RStudio", category: "tools" },
+  { name: "VS Code", category: "tools" },
 ];
 
 const languages = [
@@ -93,19 +93,8 @@ export const SkillsSection = () => {
                 key={key}
                 className="bg-card p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow duration-300"
               >
-                <div className="text-left mb-4">
+                <div className="text-center">
                   <h4 className="font-semibold text-lg">{skill.name}</h4>
-                </div>
-                <div className="w-full bg-secondary/50 h-3 rounded-full overflow-hidden">
-                  <div
-                    className="bg-primary h-3 rounded-full origin-left transition-all duration-1000"
-                    style={{ width: skill.level + "%" }}
-                  />
-                </div>
-                <div className="text-right mt-2">
-                  <span className="text-sm font-medium text-primary">
-                    {skill.level}%
-                  </span>
                 </div>
               </div>
             ))}

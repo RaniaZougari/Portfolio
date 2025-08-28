@@ -214,6 +214,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
+            rel="noreferrer"
             href="https://github.com/RaniaZougari"
           >
             Check My Github <ArrowRight size={16} />

@@ -1,4 +1,4 @@
-import { GraduationCap, Award } from "lucide-react";
+import { Award } from "lucide-react";
 import EnsimagLogo from "../../images/Ensimag.png";
 
 export const EducationSection = () => {
@@ -17,7 +17,7 @@ export const EducationSection = () => {
               <div className="text-left flex-1">
                 <h4 className="font-semibold text-lg">Grenoble INP - Ensimag</h4>
                 <p className="text-primary font-medium">MSc in Computer Science Engineering & Applied Mathematics + MSc in AI | 2023-2026</p>
-                <p className="text-sm text-muted-foreground mb-3">France's #1 Computer Science Engineering School (Le Figaro Étudiant 2025)</p>
+                <p className="text-sm text-muted-foreground mb-3">France&apos;s #1 Computer Science Engineering School (Le Figaro Étudiant 2025)</p>
                 <div className="flex flex-wrap gap-2 mb-3">
                   <span className="px-2 py-1 bg-blue-500/10 text-blue-500 rounded-full text-xs">AI Specialization</span>
                   <span className="px-2 py-1 bg-purple-500/10 text-purple-500 rounded-full text-xs">Machine Learning</span>
