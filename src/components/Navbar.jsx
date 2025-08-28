@@ -24,6 +24,20 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Gérer le scroll quand le menu mobile est ouvert
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav
       className={cn(
@@ -62,47 +76,41 @@ export const Navbar = () => {
           <ThemeToggle />
         </div>
 
-        {/* mobile nav */}
-
+        {/* mobile nav button */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
+          className="md:hidden p-2 text-foreground z-50 relative"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <div
-          className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          )}
-        >
-          <div className="flex flex-col space-y-8 text-xl items-center">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-            <div className="flex items-center gap-6 mt-2">
-              <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" rel="noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
-                <Linkedin size={24} />
-              </a>
-              <a href="https://github.com/RaniaZougari" target="_blank" rel="noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300" aria-label="GitHub">
-                <Github size={24} />
-              </a>
+        {/* mobile menu overlay */}
+        {isMenuOpen && (
+          <div className="fixed top-0 left-0 w-screen h-screen bg-background z-[999999] md:hidden">
+            <div className="flex flex-col items-center justify-center h-full space-y-8 text-xl">
+              {navItems.map((item, key) => (
+                <a
+                  key={key}
+                  href={item.href}
+                  className="text-foreground hover:text-primary transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+              <div className="flex items-center gap-6 mt-2">
+                <a href="https://www.linkedin.com/in/rania-zougari" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+                  <Linkedin size={24} />
+                </a>
+                <a href="https://github.com/RaniaZougari" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors duration-300" aria-label="GitHub">
+                  <Github size={24} />
+                </a>
+              </div>
+              <ThemeToggle showOnMobile className="mt-8" />
             </div>
-            <ThemeToggle showOnMobile className="mt-8" />
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
