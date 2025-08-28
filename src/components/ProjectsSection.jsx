@@ -1,4 +1,5 @@
-import { ArrowRight, Cake, Atom, Palette, FunctionSquare, Brain, LineChart } from "lucide-react";
+import { ArrowRight, Cake, Atom, Palette, FunctionSquare, Brain, LineChart, X } from "lucide-react";
+import { useState } from "react";
 
 const tagColors = {
   // Core CS
@@ -47,7 +48,7 @@ const projects = [
     tags: ["Python", "LLMs", "RAG", "Reranking", "Podman"],
     period: "Summer 2025",
     icon: "Brain",
-    gradient: "from-indigo-500/20 to-purple-500/20",
+    gradient: "from-fuchsia-500/20 to-violet-500/20",
     demoUrl: "/CV_RaniaZ_ENG.pdf",
     githubUrl: null,
   },
@@ -75,7 +76,7 @@ const projects = [
     tags: ["Python", "Scikit-learn", "Pandas", "Logistic Regression"],
     period: "Summer 2025",
     icon: "LineChart",
-    gradient: "from-blue-500/20 to-emerald-500/20",
+    gradient: "from-blue-500/20 to-yellow-500/20",
     demoUrl: "/CV_RaniaZ_ENG.pdf",
     githubUrl: null,
   },
@@ -89,7 +90,7 @@ const projects = [
     tags: ["C++", "Algorithms", "AI", "Minimax", "Alpha-Beta"],
     period: "April 2025",
     icon: "Atom",
-    gradient: "from-violet-500/20 to-indigo-500/20",
+    gradient: "from-indigo-500/20 to-red-500/20",
     githubUrl: "https://github.com/RaniaZougari",
     demoUrl: null,
   },
@@ -103,7 +104,7 @@ const projects = [
     tags: ["Java", "Compilers", "BYTE"],
     period: "December 2024",
     icon: "FunctionSquare",
-    gradient: "from-indigo-500/20 to-cyan-500/20",
+    gradient: "from-cyan-500/20 to-blue-500/20",
     githubUrl: null,
     demoUrl: null,
   },
@@ -117,7 +118,7 @@ const projects = [
     tags: ["C++", "VTK", "Simulation"],
     period: "2025",
     icon: "Atom",
-    gradient: "from-purple-500/20 to-blue-500/20",
+    gradient: "from-purple-500/20 to-orange-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/projetcxx_zougarir_zimmerh/Simulation_particules",
     demoUrl: null,
@@ -132,7 +133,7 @@ const projects = [
     tags: ["C", "GUI", "Widgets", "Games"],
     period: "May 2024",
     icon: "C",
-    gradient: "from-pink-500/20 to-rose-500/20",
+    gradient: "from-red-500/20 to-yellow-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/projet-c-ig",
     demoUrl: null,
@@ -147,7 +148,7 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     period: "Summer 2025",
     icon: "Cake",
-    gradient: "from-fuchsia-500/20 to-violet-500/20",
+    gradient: "from-fuchsia-500/20 to-cyan-500/20",
     githubUrl:
       "https://github.com/RaniaZougari/myportfolio/tree/main/BDCake",
     demoUrl: null,
@@ -155,6 +156,18 @@ const projects = [
 ];
 
 export const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    document.body.style.overflow = 'hidden'; // Empêche le scroll de la page
+  };
+
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = 'unset'; // Restaure le scroll
+  };
+
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-7xl">
@@ -172,7 +185,8 @@ export const ProjectsSection = () => {
             return (
               <div
                 key={project.id}
-                className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700"
+                onClick={() => openProjectModal(project)}
+                className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 cursor-pointer"
               >
                 {/* Stylized thumbnail */}
                 <div className={`h-56 relative bg-gradient-to-br ${project.gradient}`}>
@@ -222,7 +236,104 @@ export const ProjectsSection = () => {
         </div>
       </div>
 
+      {/* Modal pour les détails du projet */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Arrière-plan flouté */}
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={closeProjectModal}
+          />
+          
+          {/* Rectangle du projet */}
+          <div className="relative bg-card rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-7xl w-full max-h-[95vh] overflow-y-auto">
+            {/* Header du modal */}
+            <div className="sticky top-0 bg-card/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 p-6 rounded-t-2xl">
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${selectedProject.gradient}`}>
+                      {(() => {
+                        const Icon = iconMap[selectedProject.icon] || Atom;
+                        return <Icon className="h-6 w-6 text-primary" />;
+                      })()}
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-foreground">{selectedProject.title}</h2>
+                      <p className="text-primary font-medium">{selectedProject.period}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tags.map((tag) => (
+                      <span key={tag} className={`px-3 py-1 text-sm font-medium rounded-full ${tagColors[tag] || 'bg-gray-500 text-white'}`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <button
+                  onClick={closeProjectModal}
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors duration-200"
+                >
+                  <X className="h-6 w-6 text-gray-500" />
+                </button>
+              </div>
+            </div>
 
+            {/* Contenu du projet */}
+            <div className="p-6 space-y-6">
+              {/* Description courte */}
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Description</h3>
+                <p className="text-muted-foreground leading-relaxed">{selectedProject.longDescription}</p>
+              </div>
+
+              {/* Section pour plus de détails (vous pouvez l'étendre) */}
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Détails techniques</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Ce projet démontre mes compétences enjhgdjkhvkduyfgs;jkbcvdhgsjqknbhvkdsjgfdsuqyf;dsfcg;ksdusedyjg;skfusdj;fkdsgfdsjvfkdsufdsf,dsujfdshfksdhfjdsgjfhkgdsfgsdjhfgdshjfgsdjhfhdhjhdsgfdjkhsfg dsjhgvgdhjskcdhgkfjkdfhfjkdggkldglfygrzifygrziyfzgrlfiygzryifgzryfgeryifgzebvgaryievzrkezuyv rgilzzvciyurbzuyrykauygerzytcuezvkvbcryueycrtebgzciruyezlirzchlzevirbegcburygkhekeuykfjkbcgarku'yvatruyrctvurbkyryktryuyretretyreyretyertyreytreyterytytreuzil trc i euyrvc euzyruyezgf ze    uye rcuezyg fuyezr fezg i eziry gvvdzfezg uy igiergzeufvuf veztfezuugil bzgeeuzytfgcrfahibzf euyfygebfuyefgezgyfezghrzerfezyfezyurezrkezrioezyitrezliytrezrezglregkerutgerutre rzyuLe chat domestique (Felis catus ou Felis silvestris catus) est la forme domestique du chat sauvage Felis silvestris, une espèce de mammifères carnivores, de la famille des Félidés.
+
+Selon les résultats de travaux menés en 2006 et 2007[1], le chat domestique est une sous-espèce du chat sauvage issue d’ancêtres appartenant à la sous-espèce du chat sauvage d’Afrique (Felis silvestris lybica). Les premières domestications ont probablement lieu il y a 8 000 à 10 000 ans au Néolithique dans le Croissant fertile, époque correspondant au début de la culture de céréales et à l'engrangement de réserves susceptibles d'être attaquées par des rongeurs, le chat devenant alors pour l’Homme un auxiliaire utile se prêtant à la domestication.
+
+Le chat domestique est l’un des principaux animaux de compagnie et compte aujourd’hui une cinquantaine de races différentes reconnues par les instances de certification. Dans de très nombreux pays, le chat entre dans le cadre de la législation sur les carnivores domestiques à l’instar du chien et du furet. Essentiellement territorial, le chat est un prédateur de petites proies comme les rongeurs ou les oiseaux. Les chats ont diverses vocalisations dont les ronronnements, les miaulements, les feulements ou les grognements, bien qu’ils communiquent principalement par des positions faciales et corporelles et des phéromones.
+
+Tout d’abord vénéré par les Égyptiens, il est diabolisé en Europe au Moyen Âge et ne retrouve ses lettres de noblesse qu’au XVIIIe siècle. En Asie, le chat reste synonyme de chance, de richesse ou de longévité. Ce félin laisse son empreinte dans la culture populaire et artistique, tant au travers d’expressions populaires que de représentations diverses au sein de la littérature, de la peinture ou encore de la musique. À partir de la fin du XXe siècle, les dommages qu'il occasionne à la biodiversité sont mieux compris, et il fait partie des cent espèces envahissantes parmi les plus nuisibles du monde. {selectedProject.tags.slice(0, 3).join(', ')}. 
+                  {selectedProject.githubUrl && (
+                    <span> Le code source est disponible sur GitHub.</span>
+                  )}
+                </p>
+              </div>
+
+              {/* Liens */}
+              <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                {selectedProject.githubUrl && (
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                  >
+                    <ArrowRight className="h-4 w-4" />
+                    Voir sur GitHub
+                  </a>
+                )}
+                {selectedProject.demoUrl && (
+                  <a
+                    href={selectedProject.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors duration-200"
+                  >
+                    <ArrowRight className="h-4 w-4" />
+                    Voir la démo
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
